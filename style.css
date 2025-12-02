@@ -292,9 +292,9 @@ body {
 .carrossel-marcas-container {
     overflow: hidden;
     margin: 20px 0 50px -31px;
-    padding: 2px 59px;
+    padding: 17px 59px;
     white-space: nowrap;
-    background-color: #ffffff;
+    background-color:beige;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
@@ -313,15 +313,34 @@ body {
     padding: 0 40px;
     width: calc(50% / 5);
 }
+
+/* ESTADO PADRÃO DAS LOGOS */
 .carrossel-marca img {
     height: 90px;
     width: auto;
+
+    /* Define o estado inicial: P&B e opacidade reduzida */
     filter: grayscale(100%);
-    opacity: 0.6;
-    transition: all 0.3s;
+    opacity: 0.5; /* Opacidade reduzida para o estado de repouso */
+    transform: scale(1);
+    
+    /* ESSENCIAL: Transição suave para o zoom e o destaque central */
+    transition: 
+        transform 0.4s ease,
+        filter 0.4s ease,
+        opacity 0.4s ease;
 }
 
+/* EFEITO HOVER (Zoom leve ao passar o mouse) */
 .carrossel-marca img:hover {
     filter: none;
     opacity: 1;
+    transform: scale(1.1); 
+}
+
+/* QUANDO A LOGO ENTRA NO CENTRO (Classe adicionada pelo JavaScript) */
+.logo-destaque-centro img {
+    filter: grayscale(0%) !important; 
+    opacity: 1 !important;
+    transform: scale(1.25) !important; /* Aplica o zoom de 25% */
 }
