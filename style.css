@@ -279,3 +279,49 @@ body {
     width: 150px;
 }
 
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.carrossel-marcas-container {
+    overflow: hidden;
+    margin: 20px 0 50px -31px;
+    padding: 2px 59px;
+    white-space: nowrap;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.carrossel-marcas-trilho {
+    display: flex;
+    animation: slide 25s linear infinite;
+    width: 200%;
+}
+
+.carrossel-marca {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    width: calc(50% / 5);
+}
+.carrossel-marca img {
+    height: 90px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.carrossel-marca img:hover {
+    filter: none;
+    opacity: 1;
+}
