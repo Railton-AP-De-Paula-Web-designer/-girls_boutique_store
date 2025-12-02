@@ -134,6 +134,7 @@ body {
     position: relative;
     padding: 0 40px;
     overflow-x: hidden; 
+    margin-top: 250px;
 }
 
 .grid-produtos {
@@ -266,21 +267,15 @@ body {
     fill: #ffffff
 }
 
-/* Media Query (Otimização UX/UI) */
-@media (max-width: 900px) {
-    .grid-produtos {
-        grid-template-columns: repeat(2, 1fr); 
-    }
+.secao-introducao-container {
+    margin-bottom: 60px;
 }
 
-@media (max-width: 600px) {
-    .grid-produtos {
-        grid-template-columns: 1fr;
-    }
-    .carousel-container {
-        padding: 0 20px;
-    }
-    .carousel-nav {
-        display: none; 
-    }
+.produtos-titulo {
+    margin-bottom: 140px;
 }
+
+.logo-roupa {
+    width: 150px;
+}
+
