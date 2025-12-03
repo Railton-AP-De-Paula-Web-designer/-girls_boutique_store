@@ -588,4 +588,46 @@ body {
 
 }
 
+@media (max-width: 600px) {
+
+
+    .cabecalho nav {
+        padding: 8px;
+    }
+
+    .titulo-principal { 
+        padding-top: 60px;
+    }
+
+    .container-principal {
+        padding: 10px;
+    }
+
+    .grid-produtos {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0;
+    }
+    /*cards*/
+    .card-info {
+        padding: 20px 15px;
+    }
+
+    .card-info h3 {
+        font-size: 1.4rem;
+    }
+
+    /*carrossel de marcas*/
+    .carrossel-marca img {
+        height: 60px;
+    }
+    
+    .carrossel-marca {
+        width: 25%;
+        padding: 0 10px;
+    }
+
+
+}
+
 
