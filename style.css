@@ -659,28 +659,31 @@ body {
     /* trilho duplicado = slide infinito */
     .carrossel-marcas-trilho {
         display: flex;
-        width: 200% !important;      /* necessário para loop */
-        animation: slide 14s linear infinite !important;
+        width: 240% !important;      /* necessário para loop */
+        animation: slide 16s linear infinite !important;
         align-items: center;
         gap: 0;
         padding-left: 6px;
+        will-change: transform;
     }
 
     /* cada marca ajustada para não cortar */
     .carrossel-marca {
         flex: 0 0 auto;
-        min-width: 120px;            /* tamanho mínimo */
-        padding: 0 20px;
+        min-width: 130px;            /* tamanho mínimo */
+        padding: 0 22px;
+        box-sizing: border-box;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .carrossel-marca img {
-        height: 70px !important;
+        height: 72px !important;
         width: auto !important;
         opacity: 0.6;
         filter: grayscale(100%);
-        transition: .3s ease;
+        transition: .28s ease;
     }
 
     .carrossel-marca img:hover,
