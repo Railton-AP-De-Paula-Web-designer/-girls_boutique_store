@@ -753,3 +753,121 @@ body {
     }
 
 }
+
+/* ================================================================= */
+/* ======================   LANDSCAPE MODE   ======================= */
+/* ================================================================= */
+@media (orientation: landscape) and (max-width: 900px) {
+
+    /* HEADER */
+    .cabecalho nav {
+        padding: 6px 10px;
+        backdrop-filter: blur(4px);
+    }
+
+    .cabecalho nav ul {
+        gap: 14px;
+    }
+
+    .cabecalho nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* TÍTULO PRINCIPAL */
+    .titulo-principal {
+        padding: 50px 0 10px;
+    }
+
+    .titulo-principal h1 {
+        font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+
+    /* INTRODUÇÃO */
+    .secao-introducao {
+        padding: 30px 20px;
+    }
+
+    .secao-introducao h2 {
+        font-size: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .secao-introducao p {
+        font-size: 0.95rem;
+    }
+
+    /* GRID DE PRODUTOS */
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+        padding: 0 8px;
+    }
+
+    .card-info {
+        padding: 18px 12px;
+    }
+
+    .card-info h3 {
+        font-size: 1.2rem;
+    }
+
+    /* PREÇO */
+    .badge-preco {
+        width: 55px;
+        height: 55px;
+        font-size: 1rem;
+        top: 8px;
+        right: 8px;
+    }
+
+    /* CARROSSEL DE MARCAS */
+    .carrossel-marcas-container {
+        padding: 15px 0;
+        margin: 25px 0;
+    }
+
+    .carrossel-marcas-trilho {
+        animation-duration: 18s !important;
+    }
+
+    .carrossel-marca img {
+        height: 70px;
+        opacity: 0.55;
+    }
+
+    .logo-destaque-centro img {
+        transform: scale(1.18) !important;
+    }
+
+    /* CONTATO */
+    .secao-contato-rapido {
+        padding: 35px 18px;
+    }
+
+    .numero-contato {
+        font-size: 2.1rem;
+    }
+
+    /* BOTÃO WHATSAPP */
+    .botao-zap {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .botao-zap button {
+        padding: 13px 28px;
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
+    .footer-brand h3 {
+        font-size: 1.8rem;
+    }
+
+    .footer-social-links a {
+        font-size: 2rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+}
