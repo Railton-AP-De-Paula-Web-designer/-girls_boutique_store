@@ -588,120 +588,169 @@ body {
 
 }
 
+/* ======= BLOCO MOBILE PROFISSIONAL (cole no final do seu CSS) ======= */
 @media (max-width: 600px) {
 
+  /* HEADER / TITLE / LAYOUT */
+  .cabecalho nav {
+    padding: 8px 12px;
+  }
 
-    .cabecalho nav {
-        padding: 8px;
-    }
+  .titulo-principal {
+    padding: 70px 8px 12px 8px; /* menos espaço vertical, mais compacto no mobile */
+  }
 
-    .titulo-principal h1 { 
-        padding-top: 60px;
-        font-size: clamp(1.5rem, 8vw, 2.4rem);
-    }
+  .titulo-principal h1 {
+    font-size: clamp(1.4rem, 10vw, 2.2rem);
+    padding-top: 0;
+    line-height: 1.05;
+    text-align: center;
+  }
 
-    .container-principal {
-        padding: 15px;
-    }
+  .container-principal,
+  .container-principal-produtos {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
-    .secao-introducao {
-        padding: 40px 25px;
-    }
+  .secao-introducao {
+    padding: 28px 18px;
+  }
 
-    .grid-produtos {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0;
-    }
-    /*cards*/
-    .card-info {
-        padding: 20px 15px;
-    }
+  /* GRID DE PRODUTOS: 1 coluna */
+  .grid-produtos {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0;
+  }
 
-    .card-info h3 {
-        font-size: 1.4rem;
-    }
+  .card-info {
+    padding: 18px 14px;
+  }
 
-    /*carrossel de marcas*/
-    .carrossel-marca img {
-        height: 60px;
-    }
-    
-    .carrossel-marca {
-        width: 35% !important;
-        padding: 0 25px;
-    }
-    .secao-carrossel-titulo {
-        margin-top: 20px;
-        margin-bottom: 50px;
-    }
-    .carrossel-marcas-trilho {
-        width: 300% !important;
-        animation: slide 12s linear infinit !important;
-    }
+  .card-info h3 { font-size: 1.3rem; }
 
+  /* ===== CARROSSEL DE MARCAS - FULL-WIDTH e fluxo contínuo ===== */
 
-    /*titulos*/
-    .produtos-titulo {
-        font-size: 1.8rem;
-        margin-bottom: 40px;
-    }
+  /* Faz o carrossel ocupar LARGURA TOTAL (sem margens laterais) */
+  .carrossel-marcas-container {
+    margin: 18px 0;
+    padding: 12px 0;      /* espaço vertical, sem margens horizontais */
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    background: rgba(255,255,255,0.06);
+  }
 
-    /*contato rapido*/
+  /* Trilho flexível — duplicação de itens pressuposta no HTML (como já está) */
+  .carrossel-marcas-trilho {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 200% !important; /* duplicou os itens no HTML, assim a animação fica contínua */
+    /* animação suave e adequada para mobile (ajuste a duração para mais rápido/lento) */
+    animation: slide 14s linear infinite !important;
+    will-change: transform;
+    padding-left: 6px;   /* pequeno offset para que o primeiro item não encoste na borda */
+  }
 
-    .secao-contato-rapido {
-        padding: 40px 20px;
-    }
+  /* Cada marca ocupa largura automática mas com um min-width para não ficar muito pequena */
+  .carrossel-marca {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 14px;        /* espaçamento lateral entre marcas */
+    min-width: 110px;       /* garante que cada marca seja legível e impede corte */
+    box-sizing: border-box;
+  }
 
-    .contato-titulo {
-        font-size: 2rem;
-    }
+  /* Ajuste do tamanho das logos para mobile (visibilidade e impacto) */
+  .carrossel-marca img {
+    height: 68px !important;
+    width: auto !important;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transform: scale(1);
+    transition: transform 0.28s ease, filter 0.28s ease, opacity 0.28s ease;
+  }
 
-    /*botao-zap*/
-    .botao-zap button {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-    /* RODAPÉ (FOOTER) - OTIMIZAÇÃO DE ESPAÇO */
+  /* destaque ao passar (touch devices não exibem hover, mas mantemos para desktop) */
+  .carrossel-marca img:hover,
+  .carrossel-marca:focus img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.05);
+  }
 
-    .footer content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 30px;
-    }
+  /* quando a classe JS .logo-destaque-centro for aplicada mantém destaque */
+  .logo-destaque-centro img {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1.2) !important;
+  }
 
-    .footer-brand, .footer-social-links, .footer-legal-links{
-        flex-basis: 100%;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    .footer-social-links a {
-        margin: 0 10px;
-        font-size: 2rem;
-    }
+  /* Faz o container externo (carousel) ocupar a largura inteira do dispositivo */
+  .carousel-container {
+    padding: 0;        /* remove sides para full-bleed */
+    margin-top: 80px;  /* ajustado para mobile (evita overlap com título) */
+    overflow: hidden;
+  }
 
-    .footer-legal-links a {
-        display: block;
-        margin: 10px 0;
-    }
+  /* Faz os títulos ficarem proporcionais no mobile */
+  .secao-carrossel-titulo {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin: 18px 8px 26px 8px;
+  }
 
-    .footer-bottom-row {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
+  /* ===== Ajustes de contato, botões e footer ===== */
+  .secao-contato-rapido {
+    padding: 28px 18px;
+    margin: 18px 0;
+  }
 
-    .developer-info, .footer-copyright {
-        text-align: center;
-        flex-basis: 100%;
+  .contato-titulo { font-size: 1.8rem; }
 
+  .botao-zap {
+    right: 18px;
+    bottom: 22px;
+  }
 
-}
+  .botao-zap button {
+    padding: 10px 22px;
+    font-size: 0.98rem;
+  }
 
-.footer-section {
-    margin-top: 40px;
-}
+  /* Footer simplificado e vertical */
+  .footer-content {
+    gap: 18px;
+    padding: 18px 10px;
+  }
 
+  .footer-brand, .footer-social-links, .footer-legal-links {
+    text-align: center;
+    flex-basis: 100%;
+  }
 
-}
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Pequenas correções de acessibilidade/legibilidade */
+  .numero-contato { font-size: 1.9rem; }
+
+  /* ===== keyframes (mantemos o mesmo slide, traduzindo -50% para loop contínuo) ===== */
+  @keyframes slide {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* move metade do trilho (trilho=200%) — loop contínuo */
+  }
+
+  /* ---- Fallback / ajuste extra caso o HTML não tenha duplicado os itens ----
+     (aplique apenas se você não duplicou os itens no HTML)
+     .carrossel-marcas-trilho { width: auto !important; animation: none !important; }
+     Use esse fallback se preferir um carrossel manual (scroll) em vez de animação automática.
+  */
+
+} /* fim @media mobile */
