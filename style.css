@@ -635,6 +635,9 @@ body {
         margin-top: 20px;
         margin-bottom: 50px;
     }
+    .carrossel-marcas-trilho {
+        animation: slide 12s linear infinite;
+    }
 
 
     /*titulos*/
