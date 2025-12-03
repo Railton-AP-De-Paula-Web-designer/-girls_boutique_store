@@ -595,8 +595,9 @@ body {
         padding: 8px;
     }
 
-    .titulo-principal { 
+    .titulo-principal h1 { 
         padding-top: 60px;
+        font-size: clamp(3rem, 10vw, 5rem);
     }
 
     .container-principal {
